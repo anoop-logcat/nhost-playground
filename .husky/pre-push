@@ -9,7 +9,7 @@ then
   echo -e "\n🚫 Cannot push to remote $BRANCH branch, please create your own branch and use PR.\n" && exit 1
 fi
 
-npx nx affected --target=build --project=frontend --base=origin/development --configuration=development
+npx nx run-many --target=build --all --parallel --maxParallel=10 --base=origin/development --configuration=development
 if [[ $? -ne 0 ]] ; then
    echo -e "\n🚫 Build Failed. \n" && exit 1
 fi
