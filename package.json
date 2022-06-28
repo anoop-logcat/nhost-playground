@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
+    "postinstall": "husky install",
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
@@ -23,6 +24,7 @@
     "commitizen": "^4.2.4",
     "commitlint-config-gitmoji": "^2.2.5",
     "cz-customizable": "^6.6.0",
+    "husky": "^8.0.1",
     "nx": "13.10.6",
     "prettier": "^2.5.1",
     "standard-version": "^9.5.0",
