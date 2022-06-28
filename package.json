@@ -5,7 +5,13 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "commit": "git-cz",
+    "release": "standard-version -a"
+  },
+  "engines": {
+    "node": "v16.14.2",
+    "npm": "8.5.0"
   },
   "private": true,
   "devDependencies": {
@@ -19,6 +25,21 @@
     "cz-customizable": "^6.6.0",
     "nx": "13.10.6",
     "prettier": "^2.5.1",
+    "standard-version": "^9.5.0",
     "typescript": "~4.6.2"
+  },
+  "standard-version": {
+    "skip": {
+      "changelog": true
+    },
+    "scripts": {
+      "postbump": "npx gitmoji-changelog update",
+      "precommit": "git add CHANGELOG.md"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-customizable"
+    }
   }
 }
